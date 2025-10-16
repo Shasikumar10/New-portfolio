@@ -123,9 +123,7 @@ function erase() {
     }
 }
 
-document.addEventListener("DOMContentLoaded", function() {
-    if(textArray.length) setTimeout(type, newTextDelay + 250);
-    
+// This is handled in the main DOMContentLoaded event above   
     // Add smooth scrolling for all links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
@@ -156,7 +154,6 @@ document.addEventListener("DOMContentLoaded", function() {
         tag.setAttribute('data-aos', 'zoom-in');
         tag.setAttribute('data-aos-delay', (index * 50).toString());
     });
-});
 
 // Navbar scroll effect
 const navbar = document.querySelector('.navbar');
@@ -283,7 +280,7 @@ if (contactForm) {
     });
 }
 
-// Add typing animation to hero section with enhanced effects
+// Add animation to hero section
 document.addEventListener('DOMContentLoaded', function() {
     const heroTitle = document.querySelector('.hero-section h1');
     const heroTagline = document.querySelector('.hero-section .lead');
@@ -299,24 +296,10 @@ document.addEventListener('DOMContentLoaded', function() {
             }, 500);
         }, 300);
     }
-    
-    // Add typed.js effect if element exists
-    if (document.querySelector('.typed-text')) {
-        var typed = new Typed('.typed-text', {
-            strings: ["AI Enthusiast", "Data Scientist", "Machine Learning Engineer", "Problem Solver", "Innovator"],
-            typeSpeed: 50,
-            backSpeed: 30,
-            backDelay: 1000,
-            loop: true,
-            cursorChar: '|',
-            smartBackspace: true
-        });
-    }
 });
 
 // Project cards hover effect with enhanced animation
-const projectCards = document.querySelectorAll('.project-card');
-projectCards.forEach((card, index) => {
+document.querySelectorAll('.project-card').forEach((card, index) => {
     card.style.animationDelay = (index * 0.1) + 's';
     
     card.addEventListener('mouseenter', function() {
@@ -331,8 +314,7 @@ projectCards.forEach((card, index) => {
 });
 
 // Skill tags animation with staggered delay
-const skillTags = document.querySelectorAll('.skill-tag');
-skillTags.forEach((tag, index) => {
+document.querySelectorAll('.skill-tag').forEach((tag, index) => {
     tag.style.animationDelay = (index * 0.05) + 's';
     
     tag.addEventListener('mouseenter', function() {
