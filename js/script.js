@@ -243,42 +243,7 @@ navLinks.forEach(link => {
     });
 });
 
-// Form submission handling with enhanced feedback
-const contactForm = document.querySelector('.contact-form form');
-if (contactForm) {
-    contactForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        
-        // Get form values
-        const name = this.querySelector('input[type="text"]').value;
-        const email = this.querySelector('input[type="email"]').value;
-        const subject = this.querySelector('input[placeholder="Subject"]').value;
-        const message = this.querySelector('textarea').value;
-        
-        // Simple form validation
-        if (!name || !email || !subject || !message) {
-            alert('Please fill in all fields');
-            return;
-        }
-        
-        // Disable submit button and show loading state
-        const submitBtn = this.querySelector('button[type="submit"]');
-        const originalText = submitBtn.textContent;
-        submitBtn.disabled = true;
-        submitBtn.innerHTML = '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Sending...';
-        
-        // Simulate AJAX delay (replace with actual AJAX in production)
-        setTimeout(() => {
-            // Show success message
-            alert('Thank you for your message! I will get back to you soon.');
-            
-            // Reset form and button
-            this.reset();
-            submitBtn.disabled = false;
-            submitBtn.textContent = originalText;
-        }, 1500);
-    });
-}
+// Contact section code removed
 
 // Add animation to hero section
 document.addEventListener('DOMContentLoaded', function() {
